@@ -18,7 +18,7 @@ app.setAppUserModelId('com.denysdovhan.inboxer');
 require('electron-dl')();
 require('electron-context-menu')();
 
-const mainURL = 'https://inbox.google.com/';
+const mainURL = 'https://www.baidu.com';
 
 let mainWindow;
 let isQuitting = false;
@@ -38,13 +38,7 @@ if (isRunning) {
 }
 
 function allowedUrl(url) {
-  const urls = [
-    'https://accounts.google.com/@(u|AccountChooser|AddSession|ServiceLogin|CheckCookie|Logout){**/**,**}',
-    'https://accounts.google.com/signin/@(usernamerecovery|recovery|challenge|selectchallenge){**/**,**}',
-    'http://www.google.*/accounts/Logout2**',
-    'https://inbox.google.com{**/**,**}',
-    'https://{accounts.youtube,inbox.google}.com/accounts/@(SetOSID|SetSID)**',
-  ];
+  const urls = [];
 
   return minimatch(url, urls);
 }
