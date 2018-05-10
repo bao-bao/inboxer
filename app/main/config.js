@@ -3,8 +3,8 @@ const ElectronStore = require('electron-store');
 module.exports = new ElectronStore({
   defaults: {
     windowState: {
-      width: 900,
-      height: 600,
+      width: 1440,
+      height: 840,
     },
     alwaysOnTop: false,
     showUnreadBadge: true,

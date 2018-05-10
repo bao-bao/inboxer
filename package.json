@@ -1,27 +1,26 @@
 {
   "private": true,
-  "name": "inboxer",
-  "productName": "Inboxer",
-  "version": "1.0.3",
-  "description": "Simple client for Google Inbox",
+  "name": "ordertrack",
+  "productName": "订单管理系统",
+  "version": "1.0.0",
+  "description": "Simple client for order track",
   "author": {
-    "name": "Denys Dovhan",
-    "email": "denysdovhan@gmail.com",
-    "url": "https://denysdovhan.com"
+    "name": "com.regrx",
+    "email": "baoboo233@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://denysdovhan.com/inboxer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/denysdovhan/inboxer.git"
+    "url": "https://github.com/bao-bao/OrderTrack.git"
   },
   "bugs": {
-    "url": "https://github.com/denysdovhan/inboxer/issues"
+    "url": "https://github.com/bao-bao/OrderTrack/issues"
   },
   "keywords": [
     "client",
-    "inbox",
-    "gmail",
+    "order",
+    "vue",
+    "springboot",
     "electron",
     "app"
   ],
@@ -64,10 +63,11 @@
     "electron-updater": "^2.21.1",
     "first-run": "^1.2.0",
     "insight": "^0.8.4",
-    "minimatch-all": "^1.1.0"
+    "minimatch-all": "^1.1.0",
+    "webpack": "^4.6.0"
   },
   "build": {
-    "appId": "com.denysdovhan.inboxer",
+    "appId": "com.regrx.ordertrack",
     "files": [
       "**/*"
     ],

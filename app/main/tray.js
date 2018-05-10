@@ -3,45 +3,28 @@ const { app, Tray, Menu } = require('electron');
 const { isDarwin, sendAction } = require('./utils');
 
 const iconTrayFile = 'IconTray.png';
-const iconTrayUnreadFile = 'IconTrayUnread.png';
 
 let tray = null;
 
 const contextMenu = focusedWindow => [
   {
-    label: 'Open/Close',
+    label: '打开/关闭窗口',
     click() {
       return focusedWindow.isVisible() ? focusedWindow.hide() : focusedWindow.show();
     },
   },
   { type: 'separator' },
   {
-    label: 'Go to Inbox',
-    click() {
-      sendAction(focusedWindow, 'go-to-inbox');
-    },
-  },
-  {
-    label: 'Go to Snoozed',
-    click() {
-      sendAction(focusedWindow, 'go-to-snoozed');
-    },
-  },
-  {
-    label: 'Go to Done',
-    click() {
-      sendAction(focusedWindow, 'go-to-done');
-    },
-  },
-  { type: 'separator' },
-  {
-    label: 'Sign Out',
+    label: '退出登录',
     click() {
       sendAction(focusedWindow, 'sign-out');
     },
   },
   { type: 'separator' },
-  { role: 'quit' },
+  {
+    label: '退出系统',
+    role: 'quit',
+  },
 ];
 
 function create(win) {
@@ -56,14 +39,6 @@ function create(win) {
   tray.on('click', () => (win.isVisible() ? win.hide() : win.show()));
 }
 
-function setBadge(shouldDisplayUnread) {
-  if (isDarwin || !tray) return;
-
-  const iconPath = path.join(__dirname, '..', `static/${shouldDisplayUnread ? iconTrayFile : iconTrayUnreadFile}`);
-  tray.setImage(iconPath);
-}
-
 module.exports = {
   create,
-  setBadge,
 };
